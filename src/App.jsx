@@ -11,9 +11,26 @@ import MyAdsPage from "./pages/MyAdsPage";
 
 
 function App() {
+const [sector2id, setSector2id]=useState(undefined);
+const [sector1id, setSector1id]=useState(undefined);
+const [categoryId, setCategoryId] = useState(undefined);
+const [formProduct, setFormProduct] = useState({
+  name:"",
+  description:"",
+  value:"",
+  sector2: "",
+  sector1: "",
+  category: ""
+})
+
 
   return (
-    <CONTEXT.Provider value={{}}>
+    <CONTEXT.Provider value={{
+                              sector2id, setSector2id, 
+                              sector1id, setSector1id,
+                              categoryId, setCategoryId,
+                              formProduct, setFormProduct
+                          }}>
       <BrowserRouter>
         <Header/>
         <Routes>

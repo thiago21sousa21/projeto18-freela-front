@@ -1,28 +1,40 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import { local } from "../../utils/functions";
+import { local } from "../../../utils/functions";
+import { Sector2 } from "../categorys/Sector2";
 
 
 export function Screen2 (props){
-    const {nextScreen} = props;
+    const {nextScreen, sector2, setSector2} = props;
+    const [selectedSector, setSelectedSector] = useState(null);
+    const handleSectorSelect = (sectorId) => {
+        setSelectedSector(sectorId);
+    };
 
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_API_URL}/chooseCategory`, local.config)
+        axios.get(`${import.meta.env.VITE_API_URL}/chooseCategory`)
             .then(res =>{
-                console.log(res.data);
+                setSector2(res.data);
             }).catch(err=>console.log(err));
     },[]);
-
     return(
         <CsScreen2>
             <div className="main">
-
+                {sector2 != undefined ? (
+                    sector2.map( sector =>{
+                        return<Sector2 
+                                    key={sector.id} name={sector.name} 
+                                    id={sector.id}
+                                    selectedId={selectedSector}
+                                    onSelect={handleSectorSelect}
+                                />
+                })): 'Não disponivel...'}
                
                 <div className="containerControl">
-                    <div className="back control">VOLTAR</div>
+                    <div className="back control" onClick={()=>nextScreen('screen1')}>VOLTAR</div>
                     <div className="cancel control" onClick={()=>nextScreen(undefined)}>CANCELAR</div>
-                    <div className="next control" onClick={()=>nextScreen(undefined)}>AVANÇAR</div>
+                    <div className="next control" onClick={()=>nextScreen('screen3')}>AVANÇAR</div>
                 </div>
             </div>
         </CsScreen2>
@@ -52,20 +64,9 @@ background-color: white;
     gap: 4%;
     position: relative;
     padding-bottom: 7%;
+    overflow-y: auto;
 
-    /* .icon{
-            position: absolute;
-            right: 0;
-            top:0;
-            font-size: 30px;
-            color: red;
-            cursor: pointer;
-        } */
-
-    input{
-        height: 13%;
-        text-align: center;
-    }
+    
 
     .containerControl{
         position: absolute;
