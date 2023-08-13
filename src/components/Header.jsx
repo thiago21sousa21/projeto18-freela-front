@@ -27,7 +27,7 @@ export default function Header() {
                     <ion-icon name="cart-outline"></ion-icon>
                         <p>MEUS DESAPEGOS</p>
                     </div>
-                    <div className="signInUp"  onClick={()=>navigate('/login')}>LOGIN / CADASTRO</div>
+                    <div className="signInUp"  onClick={()=>navigate('/')}>LOGIN / CADASTRO</div>
                 </div>
             </div>
             <div className="sectors">

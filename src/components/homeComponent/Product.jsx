@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 export default function Product( props ) {
     const navigate = useNavigate();
-    const {name, mainPhoto, value, id, category} =props.prod;
+    const {name, photo, value, id, category} =props.prod;
     const showProduct = ()=>{
         navigate(`/${category}/${id}`);
     }
@@ -11,9 +11,10 @@ export default function Product( props ) {
 
     return (
         <CsProduct onClick={showProduct}>
-            <img src={mainPhoto}/>
+            <div className="img"><img src={photo}/></div>
+            
             <h2>{name}</h2>
-            <div className="valuesProduct"> R$ {value.toFixed(2)}</div>
+            <div className="valuesProduct"> R${(value/100).toFixed(2)}</div>
         </CsProduct>
     );
 }
@@ -23,18 +24,25 @@ const CsProduct = styled.div`
       height: 50%;
       margin-left: 4%;
       margin-bottom:4%;
+      cursor: pointer;
+
 
     padding: 10px;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 3px solid #73384E;
     border-radius: 5px;
 
-    img{
+    .img{
+        img{
+            width:100%;
+            height:100%;
+        }
         border: 1px solid;
-        width: 100%;
-        cursor: pointer;
+        width: 85%;
+        height:60%;
         border-radius: 12px;
         transition: transform 0.3s;
         &:hover {

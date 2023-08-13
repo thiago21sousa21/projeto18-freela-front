@@ -3,16 +3,22 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { local } from "../utils/functions";
+import { SmallPhoto } from "../components/productPageComponent/SmallPhoto";
+
 
 export default function ProductPage(props) {
     const { category, id } = useParams();
     const [currentProd, setCurrenteProd] = useState('carregando...');
+    const [currentImg, setCurrentImg] = useState(undefined);
+
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/${category}/${id}`, local.config)
             .then((res) => {
                 console.log(res.data)
                 setCurrenteProd(res.data);
+                setCurrentImg(res.data.photos[0])
+
             })
             .catch(erro => console.log(erro))
 
@@ -20,7 +26,7 @@ export default function ProductPage(props) {
 
     if(currentProd === 'carregando...')return currentProd;
     console.log(currentProd, 'ultimo')
-    const {value, name, mainPhoto, description} = currentProd;
+    const {value, name, product, description, email, phoneNumber, photos} = currentProd;
     return (
         <CsProductPage>
 
@@ -28,19 +34,30 @@ export default function ProductPage(props) {
 
                 <main>
                     <div className="imagesProduct">
-                        <div className="containerSmallImgs">
-                            <img />
+                        <div className="containerSmallImgs">                            
+                            {photos.map((photo, idx)=><SmallPhoto 
+                                                            photo={photo}
+                                                            key={idx} 
+                                                            idx={idx}
+                                                            setCurrentImg={setCurrentImg} 
+                                                            currentImg={currentImg}
+                                                        />
+                                        )
+                            }
                         </div>
-                        <img className="bigImg" />
+                        <img 
+                            className="bigImg" 
+                            src={currentImg} 
+                        />
                     </div>
                     <div className="sellerData">
-                        <h2>{name}</h2>                        
+                        <h2>{product}</h2>                        
                         <div className="value">Valor: R${value}</div>
                         <div className="contact">
                             <p>INFORMAÇÕES DE CONTATO</p>
-                            <p>Procurar por: </p>
-                            <p>email: </p>
-                            <p>telefone: </p>
+                            <p>Procurar por: {name}</p>
+                            <p>email: {email}</p>
+                            <p>telefone: {phoneNumber}</p>
                         </div>
                     </div>
                 </main>
@@ -91,17 +108,7 @@ const CsProductPage = styled.div`
             .containerSmallImgs{
                 height: 100%;
                 width: 20%;
-                img{
-                    height: 20%;
-                    border: 4px solid #73384E;               
-                    border-radius: 50%;
-                    width: 100%;
-                    cursor: pointer;
-                    &:hover{
-                        transform: scale(1.05);
-  
-                    }
-                }
+                
             }
             .bigImg{
                 //border: 1px solid;
