@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Header() {
+    const{pathname} = useLocation();
     const navigate = useNavigate();
     const [headerOptions, setHeaderOptions ] = useState(undefined);
     useEffect(()=>{
@@ -15,8 +16,9 @@ export default function Header() {
     },[]);
     if(!headerOptions)return ('...');
     //console.log(headerOptions);
+    
     return (
-        <CsHeader>
+        <CsHeader pathname={pathname}>
             <div className="containerLogoIteraction">
                 <div className="logo"  onClick={()=>navigate('/home')}>
                     <img />
@@ -54,7 +56,7 @@ const CsHeader = styled.div`
     //border: 1px solid green; 
     height: 15vh;
     background-color: #fff;
-    display: flex;
+    display: ${p=> p.pathname ==='/'? 'none':'flex'};
     flex-direction: column;
     align-items:center;
     /* position: fixed;

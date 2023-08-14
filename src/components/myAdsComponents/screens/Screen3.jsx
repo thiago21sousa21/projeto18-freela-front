@@ -36,7 +36,8 @@ export function Screen3 (props){
                 <div className="containerControl">
                     <div className="back control" onClick={()=>nextScreen('screen2')}>VOLTAR</div>
                     <div className="cancel control" onClick={()=>nextScreen(undefined)}>CANCELAR</div>
-                    <div className="next control" onClick={()=>nextScreen('screen4')}>AVANÇAR</div>
+                    {selectedSector && <div className="next control" onClick={()=>nextScreen('screen4')}>AVANÇAR</div>}
+                    
                 </div>
             </div>
         </CsScreen2>
@@ -49,14 +50,16 @@ height: 100vh;
 position:fixed;
 left:0;
 top:0;
-border: 3px solid pink;
 
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: white;
+background-color: rgba(0, 0, 0, 0.3);
+
 
 .main{
+    background-color: white;
+
     width: 60vw;
     height: 80vh;
     border: 1px solid;

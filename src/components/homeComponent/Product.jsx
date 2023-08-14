@@ -1,27 +1,37 @@
 import { useNavigate } from "react-router";
 import { styled } from "styled-components";
+import { Modify } from "../myAdsComponents/modify/Modify";
+import { useLocation } from "react-router-dom";
+
 
 export default function Product( props ) {
     const navigate = useNavigate();
+    const {pathname} = useLocation();
     const {name, photo, value, id, category} =props.prod;
     const showProduct = ()=>{
         navigate(`/${category}/${id}`);
     }
 
-
     return (
-        <CsProduct onClick={showProduct}>
+   
+        <CsProduct onClick={showProduct} pathname={pathname}>
             <div className="img"><img src={photo}/></div>
             
             <h2>{name}</h2>
             <div className="valuesProduct"> R${(value/100).toFixed(2)}</div>
+            {pathname === '/meus-produtos' && <Modify id ={id}/>}
         </CsProduct>
+        
+        
     );
 }
 
+
+
 const CsProduct = styled.div`
+      position: relative;
       width: 20%;
-      height: 50%;
+      height: ${ p=> p.pathname ==='/meus-produtos' ? '40%' : '50%'};
       margin-left: 4%;
       margin-bottom:4%;
       cursor: pointer;

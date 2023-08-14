@@ -40,7 +40,7 @@ export function Screen5(props) {
                 <div className="containerControl">
                     <div className="back control" onClick={() => nextScreen('screen4')}>VOLTAR</div>
                     <div className="cancel control" onClick={toCancel}>CANCELAR</div>
-                    <div className="next control" onClick={finalize}>AVANÇAR</div>
+                    <div className="next control" onClick={finalize}>FINALIZAR</div>
                 </div>
             </div>
         </CsScreen5>
@@ -53,14 +53,16 @@ height: 100vh;
 position:fixed;
 left:0;
 top:0;
-border: 3px solid pink;
 
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: white;
+background-color: rgba(0, 0, 0, 0.3);
+
 
 .main{
+    background-color: white;
+
     width: 60vw;
     height: 80vh;
     border: 1px solid;

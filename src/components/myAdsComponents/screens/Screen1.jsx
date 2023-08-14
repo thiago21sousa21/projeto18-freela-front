@@ -51,12 +51,10 @@ height: 100vh;
 position:fixed;
 left:0;
 top:0;
-border: 3px solid pink;
-
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: white;
+background-color: rgba(0, 0, 0, 0.3);
 
 .main{
     width: 60vw;
@@ -68,15 +66,7 @@ background-color: white;
     gap: 4%;
     position: relative;
     padding-bottom: 7%;
-
-    /* .icon{
-            position: absolute;
-            right: 0;
-            top:0;
-            font-size: 30px;
-            color: red;
-            cursor: pointer;
-        } */
+    background-color: white;
 
     input{
         height: 13%;

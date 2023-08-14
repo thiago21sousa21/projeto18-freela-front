@@ -50,8 +50,6 @@ export default function MyAdsPage(props) {
             form: formProduct,
             photos: arrPhotos
         }
-    //    formProduct
-    //    arrPhotos;
     const validateArrPhotos = photoProductSchema.validate(arrPhotos);
     const validateForm = productSchema.validate(formProduct);
     console.log(body)
@@ -71,7 +69,8 @@ export default function MyAdsPage(props) {
                 console.log(res)
             }).catch(err=>console.log(err))
         
-        nextScreen(undefined)
+        nextScreen(undefined);
+        location.reload();
     }
 
     return (
@@ -148,6 +147,7 @@ const CsMyAdsPage = styled.div`
         height: 50%;
         margin-left: 4%;
         margin-bottom:4%;
+        cursor: pointer;
     }
   }
 `;
