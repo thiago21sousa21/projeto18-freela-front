@@ -10,7 +10,7 @@ export function SmallPhoto(props) {
 
 const CsSmallPhoto = styled.div`
     height: 20%;
-    border: 4px solid #73384E;               
+    border: 4px solid #0d0d0d;               
     border-radius: 50%;
     width: 100%;    
     cursor: pointer;

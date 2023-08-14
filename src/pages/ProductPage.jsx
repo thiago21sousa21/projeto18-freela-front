@@ -80,7 +80,7 @@ const CsProductPage = styled.div`
     width: 100%;
     height: 85vh;
     
-    *{border: 1px solid;}
+    //*{border: 1px solid;}
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +111,7 @@ const CsProductPage = styled.div`
                 
             }
             .bigImg{
-                //border: 1px solid;
+                border: 1px solid;
                 height: 100%;
                 width: 80%;
                 border-radius: 12px;
@@ -144,13 +144,15 @@ const CsProductPage = styled.div`
         flex-direction: column;
         text-align: center;
         //border: 1px solid pink;
-        width: 80%;
+        //margin: 0 auto;
+        width: 70%;
 
         h1{
             font-size: 50px;
         }
         .descriptionText{
-            border: 1px solid;
+           // border: 1px solid;
+            margin-bottom: 50px;
         }
 
     }
