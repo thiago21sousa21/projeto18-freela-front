@@ -23,6 +23,7 @@ export default function HomePage(props) {
     .catch((err)=>{
       if(!local.token){return navigate('/');}
       console.log(err.message)
+      console.log(err)
     })
 
   }, []);
