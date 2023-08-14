@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import renovaJa from './../assets/renovaJa.jpeg'
 
 export default function Header() {
     const{pathname} = useLocation();
@@ -21,8 +22,8 @@ export default function Header() {
         <CsHeader pathname={pathname}>
             <div className="containerLogoIteraction">
                 <div className="logo"  onClick={()=>navigate('/home')}>
-                    <img />
-                    <><h2>WALET STORE</h2></>
+                    <img src={renovaJa}/>
+                    <><h2> RenovaJa</h2></>
                 </div>
                 <div className="interaction">
                     <div className="carrinho"  onClick={()=>{navigate('/meus-produtos'); }}>
@@ -144,7 +145,7 @@ const CsHeader = styled.div`
         height: 30%;
         width: 100%;
         font-size: 10px;
-        background-color: #73384E;
+        background-color: #585928;
         color: white;
         display: flex;
         justify-content: space-between;
