@@ -118,7 +118,7 @@ export default function MyAdsPage(props) {
 
 const CsMyAdsPage = styled.div`
   //margin-top: 100px;
-  border: 3px solid;
+  //border: 3px solid;
   //background-color: red;
   height: 85vh;
   width: 100wv;
@@ -135,7 +135,7 @@ const CsMyAdsPage = styled.div`
   main{
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    //border: 1px solid red;
     margin-top:2vh;
     display: flex;
     //justify-content: space-between;
