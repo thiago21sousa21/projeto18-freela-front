@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { local, updateForm } from "../utils/functions";
 import axios from "axios";
-
+import renovaJa from './../assets/renovaJa.jpeg'
 
 
 
@@ -29,7 +29,7 @@ export default function SignInPage() {
     return (
       <SingInContainer onSubmit={sendDataForm}>
         <form >
-          <img  />
+          <img src={renovaJa} />
           <input placeholder="E-mail" type="email" required id='email' value={formLogin['email']} onChange={(e)=>updateForm(e, formLogin,setFormLogin )}/>
           <input placeholder="Senha" type="password" required id='password' value={formLogin['password']} onChange={(e)=>updateForm(e, formLogin,setFormLogin )}/>
           <button>Entrar</button>
@@ -42,6 +42,11 @@ export default function SignInPage() {
   }
 
   const SingInContainer = styled.section`
+
+  img{
+    width: 40vh;
+    height: 40vh;
+  }
   height: 100vh;
   display: flex;
   flex-direction: column;

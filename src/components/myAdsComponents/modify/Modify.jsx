@@ -23,7 +23,7 @@ export function Modify (props){
 
 const CsModify = styled.div`
 position: absolute;
-border: 3px solid #73384E;
+border: 3px solid #CD7F32;
 border-radius: 5px;
 width: 103%;
 height: 27%;

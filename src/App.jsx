@@ -4,10 +4,10 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import SignInPage from "./pages/SignIn";
 import SignUpPage from "./pages/SignUp";
 import HomePage from "./pages/HomePage";
-import Header from "./components/Header";
 import ProductPage from "./pages/ProductPage";
 import SectorPage from "./pages/SectorPage";
 import MyAdsPage from "./pages/MyAdsPage";
+import Header from "./components/header/Header";
 
 
 function App() {

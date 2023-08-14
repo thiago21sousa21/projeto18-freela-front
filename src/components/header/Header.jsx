@@ -2,7 +2,9 @@ import { styled } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import renovaJa from './../assets/renovaJa.jpeg'
+import renovaJa from './../../assets/renovaJa.jpeg';
+import { HeaderCategory } from "./HeaderCategory";
+
 
 export default function Header() {
     const{pathname} = useLocation();
@@ -34,10 +36,10 @@ export default function Header() {
                 </div>
             </div>
             <div className="sectors">
-                {headerOptions.map(category => (
-                    <div key={category.id} className="molde">
-                        <p onClick={()=>{navigate(`/${category.name}`);}}>{category.name}</p>
-                    </div>
+                {headerOptions.map(category => (<HeaderCategory key={category.id} category={category} />
+                    // <div key={category.id} className="molde">
+                    //     <p onClick={()=>{navigate(`/${category.name}`);}}>{category.name}</p>
+                    // </div>
                 ))}                
             </div>
 
@@ -132,7 +134,7 @@ const CsHeader = styled.div`
                 align-items: center;
                 padding: 0 10px;
                 border-radius: 12px;
-                color: #73384E;
+                color: #CD7F32;
                 cursor: pointer;
             }
         }
@@ -163,7 +165,7 @@ const CsHeader = styled.div`
             align-items: center;
             padding: 0 10px;
             cursor: pointer;
-            color: #73384E;
+            color: #CD7F32;
 
         }
     }

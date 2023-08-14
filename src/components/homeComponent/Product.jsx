@@ -42,7 +42,7 @@ const CsProduct = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #73384E;
+    border: 3px solid #CD7F32;
     border-radius: 5px;
 
     .img{
