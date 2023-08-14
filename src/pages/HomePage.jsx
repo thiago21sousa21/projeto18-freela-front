@@ -12,13 +12,16 @@ export default function HomePage(props) {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    if(!local.token){return navigate('/');}
+   
     axios.get(`${import.meta.env.VITE_API_URL}/home`, local.config)
     .then((res)=>{
+
       console.log(res)
       setAllProducts(res.data);
+      
     })
     .catch((err)=>{
+      if(!local.token){return navigate('/');}
       console.log(err.message)
     })
 

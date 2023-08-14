@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { updateForm } from "../utils/functions";
 import { useState } from "react";
 import axios from "axios";
+import renovaJa from './../assets/renovaJa.jpeg'
 
 
 export default function SignUpPage() {
@@ -25,7 +26,7 @@ export default function SignUpPage() {
   return (
     <SingUpContainer>
       <form onSubmit={sendDataForm}>
-        <img />
+        <img src={renovaJa}/>
         <input  placeholder="Nome" type="text" id="name" 
               required  value={formSingUp['name']} 
               onChange={(e)=>updateForm(e, formSingUp,setFormSingUp )}/>
@@ -88,7 +89,7 @@ const SingUpContainer = styled.section`
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color:${btstats => btstats.btstats ? '#A68A94' : '#73384E'};
+        background-color:${btstats => btstats.btstats ? '#A68A94' : '#10af1e;'};
         font-size: 20px;
         font-weight: 600;
         color: #fff;

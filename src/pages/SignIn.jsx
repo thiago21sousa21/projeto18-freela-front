@@ -57,7 +57,7 @@ export default function SignInPage() {
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color:${btstats => btstats.btstats ? '#A68A94' : '#73384E'};
+        background-color:${btstats => btstats.btstats ? '#A68A94' : '#10af1e;'};
         font-size: 20px;
         font-weight: 600;
         color: #fff;

@@ -57,7 +57,7 @@ const CsHeader = styled.div`
     //border: 1px solid green; 
     height: 15vh;
     background-color: #fff;
-    display: ${p=> p.pathname ==='/'? 'none':'flex'};
+    display: ${p=> p.pathname ==='/' || p.pathname ==='/cadastro'? 'none':'flex'};
     flex-direction: column;
     align-items:center;
     /* position: fixed;
@@ -110,7 +110,7 @@ const CsHeader = styled.div`
                 width: 50%;
                 display: flex;
                 align-items: center;
-                background-color: #10af1e;
+                background-color: #0D0D0D;
                 border: 1px solid;
                 //width: auto;
                 border-radius: 12px;
@@ -127,7 +127,7 @@ const CsHeader = styled.div`
             .signInUp{
                 height: 80%;
                 width: 50%;
-                border: 1px solid  #73384E;                
+                border: 1px solid  #10af1e;;                
                 display: flex;
                 align-items: center;
                 padding: 0 10px;
