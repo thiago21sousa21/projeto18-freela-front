@@ -75,7 +75,7 @@ const CsHeader = styled.div`
         //flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid green; 
+        //border: 1px solid green; 
 
 
         .logo{
@@ -84,7 +84,7 @@ const CsHeader = styled.div`
             height: 80%;
             width: 20%;
             font-size: 25px;
-            border: 1px solid green; 
+            //border: 1px solid green; 
             cursor: pointer;
 
             img{
@@ -97,7 +97,7 @@ const CsHeader = styled.div`
         .interaction{
             height: 80%;
             width: 30%;
-            border: 1px solid;
+            //border: 1px solid;
 
             display: flex;
             justify-content: space-between;
